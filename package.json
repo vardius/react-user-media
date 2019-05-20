@@ -41,7 +41,6 @@
     "prepare": "yarn build",
     "prebuild": "yarn clean",
     "postbuild": "rimraf {lib,es}/**/__tests__",
-    "posttest": "yarn typecheck && yarn lint",
     "preversion": "yarn test",
     "postversion": "git push && git push --tags"
   },
@@ -79,5 +78,9 @@
     "react hooks useusermedia",
     "use user media hook",
     "react user media hook"
-  ]
+  ],
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
