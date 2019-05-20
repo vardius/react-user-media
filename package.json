@@ -1,36 +1,85 @@
 {
-  "name": "react-peer-data",
+  "name": "react-user-media",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "description": "React wrapper for getUserMedia",
+  "author": {
+    "name": "Rafał Lorenz",
+    "email": "vardius@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vardius/react-user-media/issues"
+  },
+  "homepage": "https://github.com/vardius/react-user-media#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "types": "dist/src/index.d.ts",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.2",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
+    "react-scripts": "2.1.5",
+    "rimraf": "^2.6.1",
+    "rollup": "^1.11.3",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.21.0",
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "clean": "rimraf dist es lib coverage",
+    "prepare": "yarn build",
+    "prebuild": "yarn clean",
+    "postbuild": "rimraf {lib,es}/**/__tests__",
+    "posttest": "yarn typecheck && yarn lint",
+    "preversion": "yarn test",
+    "postversion": "git push && git push --tags"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.ts"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react hook",
+    "react-hook",
+    "use",
+    "user",
+    "react",
+    "react-use-user",
+    "react-use-usermedia",
+    "react-user-hook",
+    "react-usermedia-hook",
+    "use-user",
+    "user media",
+    "usermedia",
+    "useusermedia hook",
+    "react-hooks-user-media",
+    "react useusermedia",
+    "react hooks tutorial",
+    "react custom hooks",
+    "react-useusermedia",
+    "use hooks",
+    "react useusermedia hook",
+    "react-hooks-usermedia",
+    "react hooks useusermedia",
+    "use user media hook",
+    "react user media hook"
+  ]
 }
