@@ -1,5 +1,5 @@
 {
-  "name": "react-user-media",
+  "name": "@vardius/react-user-media",
   "version": "0.1.0",
   "description": "React wrapper for getUserMedia",
   "author": {

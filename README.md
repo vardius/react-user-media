@@ -44,7 +44,7 @@ HOW TO USE
 ## Getting started
 ### Installation
 ```bash
-npm install react-user-media
+npm install @vardius/react-user-media
 ```
 ### Examples
 #### Hook
