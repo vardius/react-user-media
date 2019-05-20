@@ -47,13 +47,10 @@ HOW TO USE
 npm install react-user-media
 ```
 ### Examples
-```bash
-npm install react-user-media
-```
 #### Hook
-HOOK
+TODO
 #### HOC
-HOC
+TODO
 
 License
 -------
