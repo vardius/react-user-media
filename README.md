@@ -10,13 +10,14 @@ React UserMedia
   <summary>Table of Content</summary>
 
 <!-- toc -->
-
 - [About](#about)
 - [How to use](#how-to-use)
   - [Installation](#installation)
   - [Examples](#examples)
     - [Hook](#hook)
-    - [HOC](#hoc)
+    - [Context](#context)
+      - [Context Hook](#context-hook)
+      - [HOC](#hoc)
 - [License](#license)
 <!-- tocstop -->
 
@@ -41,6 +42,8 @@ We are using the github [issue tracker](https://github.com/vardius/react-user-me
 HOW TO USE
 ==================================================
 
+1. [Chat Example](https://github.com/vardius/react-webrtc-chat)
+
 ## Getting started
 ### Installation
 ```bash
@@ -48,9 +51,83 @@ npm install @vardius/react-user-media
 ```
 ### Examples
 #### Hook
-TODO
-#### HOC
-TODO
+```
+import React from 'react';
+import { UserMediaError, useUserMedia } from '@vardius/react-user-media';
+
+function App() {
+  const { stream, error } = useUserMedia({ audio: true, video: true });
+
+  if (error) {
+    return (
+      <UserMediaError error={error} />
+    );
+  }
+
+  return (
+    <video autoPlay srcObject={stream} />
+  );
+}
+
+export default App;
+```
+#### Context
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { UserMediaProvider } from '@vardius/react-user-media';
+
+import App from './App';
+
+ReactDOM.render(
+    <UserMediaProvider constraints={{ audio: true, video: true }}>
+        <App />
+    </UserMediaProvider>,
+    document.getElementById("root")
+);
+```
+##### Context Hook
+```
+import React from 'react';
+import { UserMediaError, useUserMediaFromContext } from '@vardius/react-user-media';
+
+function App() {
+  const { stream, error } = useUserMediaFromContext();
+
+  if (error) {
+    return (
+      <UserMediaError error={error} />
+    );
+  }
+
+  return (
+    <video autoPlay srcObject={stream} />
+  );
+}
+
+export default App;
+```
+##### HOC
+```
+import React from 'react';
+import { UserMediaError, withUserMedia } from '@vardius/react-user-media';
+
+function App({ userMedia }) {
+  const { stream, error } = userMedia;
+
+  if (error) {
+    return (
+      <UserMediaError error={error} />
+    );
+  }
+
+  return (
+    <video autoPlay srcObject={stream} />
+  );
+}
+
+export default withUserMedia(App);
+```
 
 License
 -------
