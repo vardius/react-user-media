@@ -66,7 +66,7 @@ function App() {
   }
 
   return (
-    <video autoPlay srcObject={stream} />
+    <video autoPlay ref={video => { video.srcObject = stream }} />
   );
 }
 
@@ -104,7 +104,7 @@ function App() {
   }
 
   return (
-    <video autoPlay srcObject={stream} />
+    <video autoPlay ref={video => { video.srcObject = stream }} />
   );
 }
 
@@ -125,7 +125,7 @@ function App({ userMedia }) {
   }
 
   return (
-    <video autoPlay srcObject={stream} />
+    <video autoPlay ref={video => { video.srcObject = stream }} />
   );
 }
 
