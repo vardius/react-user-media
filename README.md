@@ -1,8 +1,8 @@
 React UserMedia
 ================
 [![Build Status](https://travis-ci.org/vardius/react-user-media.svg?branch=master)](https://travis-ci.org/vardius/react-user-media)
-[![npm version](https://img.shields.io/npm/v/react-user-media.svg)](https://www.npmjs.com/package/react-user-media)
-[![npm downloads](https://img.shields.io/npm/dm/react-user-media.svg)](https://www.npmjs.com/package/react-user-media)
+[![npm version](https://img.shields.io/npm/v/@vardius/react-user-media.svg)](https://www.npmjs.com/package/@vardius/react-user-media)
+[![npm downloads](https://img.shields.io/npm/dm/@vardius/react-user-media.svg)](https://www.npmjs.com/package/@vardius/react-user-media)
 [![license](https://img.shields.io/github/license/vardius/react-user-media.svg)](LICENSE)
 [![codecov](https://codecov.io/gh/vardius/react-user-media/branch/master/graph/badge.svg)](https://codecov.io/gh/vardius/react-user-media)
 
