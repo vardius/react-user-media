@@ -50,8 +50,9 @@ HOW TO USE
 npm install @vardius/react-user-media
 ```
 ### Examples
+Use `useUserMedia` hook to request user media from navigator.
 #### Hook
-```
+```javascript
 import React from 'react';
 import { UserMediaError, useUserMedia } from '@vardius/react-user-media';
 
@@ -72,7 +73,8 @@ function App() {
 export default App;
 ```
 #### Context
-```
+Use `UserMediaProvider` to request user media from navigator and pass it down with context.
+```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { UserMediaProvider } from '@vardius/react-user-media';
@@ -86,8 +88,9 @@ ReactDOM.render(
     document.getElementById("root")
 );
 ```
+you can access context user media value in two ways:
 ##### Context Hook
-```
+```javascript
 import React from 'react';
 import { UserMediaError, useUserMediaFromContext } from '@vardius/react-user-media';
 
@@ -108,7 +111,7 @@ function App() {
 export default App;
 ```
 ##### HOC
-```
+```javascript
 import React from 'react';
 import { UserMediaError, withUserMedia } from '@vardius/react-user-media';
 
